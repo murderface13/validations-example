@@ -1,0 +1,57 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :galaxy %><br>
+    <%= f.text_field :galaxy %>
+  </div>
+  <div class="field">
+    <%= f.label :planet %><br>
+    <%= f.text_field :planet %>
+  </div>
+  <div class="field">
+    <%= f.label :planet_no %><br>
+    <%= f.text_field :planet_no %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :city_citizens %><br>
+    <%= f.text_field :city_citizens %>
+  </div>
+  <div class="field">
+    <%= f.label :street %><br>
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    <%= f.label :house %><br>
+    <%= f.text_field :house %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
