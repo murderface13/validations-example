@@ -1,4 +1,4 @@
-<%= form_for(@user, name: "user_form") do |f| %>
+<%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :first_name %><br>
-    <%= f.text_field :first_name, name: 'first_name' %>
+    <%= f.text_field :first_name %>
   </div>
   <div class="field">
     <%= f.label :last_name %><br>
@@ -57,19 +57,9 @@
 <% end %>
 
 <script type="text/javascript">
-  var validator = new FormValidator('user_form', [{
-        name: 'user_first_name',
-        display: 'required',
-        rules: 'required'
-    }, {
-        name: 'user_planet_no',
-        display: 'min length',
-        rules: 'min_length[8]'
-    }], function(errors, event) {
-        alert('a');
-        if (errors.length > 0) {
-            alert(errors);
-        }
-    });
-
+  var first_name_field = new LiveValidation('user_first_name', { validMessage: '✔', wait: 500 });
+  first_name_field.add( Validate.Presence );
+  var planet_no_field = new LiveValidation('user_planet_no', { validMessage: 'НИЧОСИ!!!', wait: 500 });
+  planet_no_field.add( Validate.Presence );
+  planet_no_field.add( Validate.Numericality );
 </script>
