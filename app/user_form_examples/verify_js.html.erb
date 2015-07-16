@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, 'data-validate' => 'required'%>
   </div>
   <div class="field">
     <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, 'data-validate' => 'required' %>
   </div>
   <div class="field">
     <%= f.label :galaxy %><br>
@@ -25,15 +25,16 @@
   </div>
   <div class="field">
     <%= f.label :planet %><br>
-    <%= f.text_field :planet %>
+    <%= f.text_field :planet, 'data-validate' => 'required' %>
   </div>
   <div class="field">
     <%= f.label :planet_no %><br>
-    <%= f.text_field :planet_no %>
+    <% # VOVA!!! TELL ABOUT BUG WITH SPACES!!!%>
+    <%= f.text_field :planet_no, 'data-validate' => "required,number,rangeVal(1,8)" %>
   </div>
   <div class="field">
     <%= f.label :country %><br>
-    <%= f.text_field :country %>
+    <%= f.text_field :country, 'data-validate' => 'phone'%>
   </div>
   <div class="field">
     <%= f.label :city %><br>
@@ -55,4 +56,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-

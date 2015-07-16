@@ -1,0 +1,24 @@
+This is a validations presentation plan
+
+1. Activerecord validations
+
+2. Verify.js
+	+ easy to use
+	+ layout is OK
+	+ ajax validation
+	- i have no idea how to customize basic rules
+	- lib is very fat - ~40kb
+
+3. Validate.js
+	+ lib is very soft ~ 3kb
+	- no inline alerts
+	- no useful syntax
+	- no ajax validation
+	- looks like activerecord validation
+
+4. HTML Form Validation
+	+ easy to use
+	- no customize - it is HTML5 features
+
+5. VALIDATE.JS
+	

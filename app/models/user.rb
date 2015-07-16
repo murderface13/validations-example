@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates :galaxy, absence: true
 
   validates :planet, inclusion: { in: %w(mercury venus earth mars jupiter saturn uranus neptune),
-                                  message: "%{value} is not a valid size."
+                                  message: "%{value} is not a valid planet."
                                 }
 
   validates :planet, exclusion: { in: %w(pluto),

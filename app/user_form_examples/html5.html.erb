@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, required: true %>
   </div>
   <div class="field">
     <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, required: true %>
   </div>
   <div class="field">
     <%= f.label :galaxy %><br>
@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :planet_no %><br>
-    <%= f.text_field :planet_no %>
+    <%= f.text_field :planet_no, required: true, type: 'number', max: 8, min: 1 %>
   </div>
   <div class="field">
     <%= f.label :country %><br>
@@ -55,4 +55,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-
